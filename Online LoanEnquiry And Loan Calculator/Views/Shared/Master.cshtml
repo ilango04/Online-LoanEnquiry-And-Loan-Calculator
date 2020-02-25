@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header style="text-align:center">
+        <h1>LoanEnquiry</h1>
+    </header>
+    <nav>
+        @Html.ActionLink("Home", "Index")<br /><br />
+        @Html.ActionLink("Login", "Login")<br /><br />
+        @Html.ActionLink("Registration", "Registration")
+
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer style="text-align:center;">
+        <div>All rights reserved</div>
+    </footer>
+</body>
+</html>
