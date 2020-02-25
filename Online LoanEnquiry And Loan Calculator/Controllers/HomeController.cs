@@ -11,16 +11,18 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            IEnumerable<Customer> customer = new CustomerRepository().GetCustomers();
-            return View(customer);
+            new CustomerRepository().GetCustomers();
+            return View();
         }
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Registration(Customer customer)
         {
             if(ModelState.IsValid)
             {
-
+                new CustomerRepository().GetCustomers();
+                return View();
             }
+            return View();
         }
     }
 }
