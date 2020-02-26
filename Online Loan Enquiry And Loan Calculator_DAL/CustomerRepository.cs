@@ -11,5 +11,11 @@ namespace Online_LoanEnquiry_And_Loan_Calculator_DAL
             CustomerDBContext context = new CustomerDBContext();
             return context.customers.ToList();
         }
+        public void AddCustomer(Customer customer)
+        {
+            CustomerDBContext context = new CustomerDBContext();
+            context.customers.Add(customer);
+            context.SaveChanges();
+        }
     }
 }

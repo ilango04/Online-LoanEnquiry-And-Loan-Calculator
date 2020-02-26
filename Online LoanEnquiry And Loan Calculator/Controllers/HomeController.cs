@@ -16,14 +16,24 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
             new CustomerRepository().GetCustomers();
             return View();
         }
+        public ActionResult Registration()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult Registration(Customer customer)
         {
             if(ModelState.IsValid)
             {
-                new CustomerRepository().GetCustomers();
+                CustomerRepository repository = new CustomerRepository();
+                repository.GetCustomers();
+                repository.AddCustomer(customer);
                 return View();
             }
+            return View();
+        }
+        public ActionResult Login()
+        {
             return View();
         }
     }
