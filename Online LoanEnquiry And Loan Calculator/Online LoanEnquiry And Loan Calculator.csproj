@@ -117,9 +117,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="CustomerDBContext.cs" />
-    <Compile Include="CustomerRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +151,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Customer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Online Loan Enquiry And Loan Calculator_DAL\Online Loan Enquiry And Loan Calculator_DAL.csproj">
+      <Project>{8090a6ec-19c6-4474-bb83-f9a85acb1ab2}</Project>
+      <Name>Online Loan Enquiry And Loan Calculator_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Online LoanEnquiry And Loan Calculator_EL\Online LoanEnquiry And Loan Calculator_EL.csproj">
+      <Project>{05fc1c0f-9e9a-4439-a78a-b70a2049905f}</Project>
+      <Name>Online LoanEnquiry And Loan Calculator_EL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

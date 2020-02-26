@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Online LoanEnquiry And Loan Calculator_EL")]
+[assembly: AssemblyTitle("Online Loan Enquiry And Loan Calculator_DAL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Online LoanEnquiry And Loan Calculator_EL")]
+[assembly: AssemblyProduct("Online Loan Enquiry And Loan Calculator_DAL")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("05fc1c0f-9e9a-4439-a78a-b70a2049905f")]
+[assembly: Guid("8090a6ec-19c6-4474-bb83-f9a85acb1ab2")]
 
 // Version information for an assembly consists of the following four values:
 //

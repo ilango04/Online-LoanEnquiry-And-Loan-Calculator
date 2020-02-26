@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Online_LoanEnquiry_And_Loan_Calculator_DAL;
+using Online_LoanEnquiry_And_Loan_Calculator_EL;
 using System.Web.Mvc;
 
 namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers

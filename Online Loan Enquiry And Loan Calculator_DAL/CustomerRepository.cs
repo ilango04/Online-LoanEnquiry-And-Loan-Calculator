@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Online_LoanEnquiry_And_Loan_Calculator
+using Online_LoanEnquiry_And_Loan_Calculator_EL;
+namespace Online_LoanEnquiry_And_Loan_Calculator_DAL
 {
     public class CustomerRepository
     {
