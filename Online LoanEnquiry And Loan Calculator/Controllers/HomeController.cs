@@ -10,10 +10,11 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        // GET: Home      
         public ActionResult Index()
-        {
-            new CustomerRepository().GetCustomers();
+        {         
+            IEnumerable<Customer> customerList=new CustomerRepository().GetCustomers();
+            ViewData["customers"]=customerList;
             return View();
         }
         public ActionResult Registration()
@@ -21,6 +22,7 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Registration(Customer customer)
         {
             if(ModelState.IsValid)
@@ -28,7 +30,7 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
                 CustomerRepository repository = new CustomerRepository();
                 repository.GetCustomers();
                 repository.AddCustomer(customer);
-                return View();
+                return View("index");
             }
             return View();
         }
@@ -36,5 +38,19 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
         {
             return View();
         }
+        public ActionResult Script()
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Script1()
+        {
+            return View();
+        }
+
     }
 }

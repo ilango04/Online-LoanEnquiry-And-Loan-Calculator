@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Script</title>
+</head>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>@Html.Label("Address")</td>
+                    <td>@Html.TextArea("Address")</td>
+                </tr>
+                <tr><td><input type="submit" /></td></tr>
+            </table>
+        </div>
+    </body>
+}
+</html>
