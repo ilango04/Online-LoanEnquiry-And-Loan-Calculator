@@ -1,0 +1,182 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.CustomerModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    @using (Html.BeginForm("Delete", "Customer", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.id)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.id)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.name)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.type)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.type)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.monthlyIncome)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.monthlyIncome)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.mobilenumber)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.mobilenumber)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.residentArea)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.residentArea)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.salaryReceivedIn)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.salaryReceivedIn)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.desiredLoanAmount)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.desiredLoanAmount)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.gender)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.gender)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.pincode)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.pincode)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.panCardNumber)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.panCardNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.dateOfBirth)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.dateOfBirth)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.email)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.email)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.company)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.company)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.currentEMIAmount)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.currentEMIAmount)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.tenure)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.tenure)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.experience)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.experience)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.haveLoan)
+                </td>
+                <td>:</td>
+                <td>
+                    @Html.DisplayFor(Model => Model.haveLoan)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Back To Details", "Index")</td>
+                <td><input type="submit" value="Delete" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

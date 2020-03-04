@@ -1,0 +1,175 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.CustomerModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit</title>
+</head>
+@using (Html.BeginForm("Edit", "Customer", FormMethod.Post))
+{
+    <body>
+        @Html.HiddenFor(Model=>Model.id)
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.name)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.name, new { @class = "clsName", @type = "text", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.type)
+                    </td>
+                    <td>
+                        @Html.EnumDropDownListFor(Model => Model.type, "Select EmploymentType", new { @class = "enumType" })
+
+                        @Html.ValidationMessageFor(Model => Model.type)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.monthlyIncome)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.monthlyIncome, new { @class = "clsIncome", @type = "number", @maxlength = "7" })
+                        @Html.ValidationMessageFor(Model => Model.monthlyIncome)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.mobilenumber)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.mobilenumber, new { @class = "clsMobile", @type = "number" })
+                        @Html.ValidationMessageFor(Model => Model.mobilenumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.residentArea)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.residentArea, new { @class = "clsArea", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.residentArea)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.salaryReceivedIn)
+                    </td>
+                    <td>
+                        @Html.EnumDropDownListFor(Model => Model.salaryReceivedIn, "Select Bank", new { @class = "enumBank" })
+
+                        @Html.ValidationMessageFor(Model => Model.salaryReceivedIn)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.desiredLoanAmount)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.desiredLoanAmount, new { @type = "number", @class = "clsLoan", @maxlength = "6" })
+                        @Html.ValidationMessageFor(Model => Model.desiredLoanAmount)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Gender")
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(Model => Model.gender, "male", new { @class = "ratio" })Male
+                        @Html.RadioButtonFor(Model => Model.gender, "female", new { @class = "ratio" }) Female
+                        @Html.RadioButtonFor(Model => Model.gender, "other", new { @class = "ratio" }) Other
+                        @Html.ValidationMessageFor(Model => Model.gender)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.pincode)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.pincode, new { @type = "number", @class = "clsPincode", @maxlength = "6" })
+                        @Html.ValidationMessageFor(Model => Model.pincode)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.panCardNumber)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.panCardNumber, new { @class = "clsPan", @maxlength = "10" })
+                        @Html.ValidationMessageFor(Model => Model.panCardNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.dateOfBirth)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.dateOfBirth, new { @class = "clsDate", @type = "date" })
+                        @Html.ValidationMessageFor(Model => Model.dateOfBirth)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.email)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.email, new { @class = "clsEmail", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.company)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.company, new { @class = "clsCompany", @maxlength = "20" })
+                        @Html.ValidationMessageFor(Model => Model.company)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.currentEMIAmount)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.currentEMIAmount, new { @type = "number", @class = "clsEmi", @maxlength = "7" })
+                        @Html.ValidationMessageFor(Model => Model.currentEMIAmount)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.tenure)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.tenure, new { @class = "clsTenure", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.tenure)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.experience)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.experience, new { @type = "number", @class = "clsExperience", @maxlength = "2" })
+                        @Html.ValidationMessageFor(Model => Model.experience)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.haveLoan)
+                    </td>
+                    <td>
+                        @Html.EnumDropDownListFor(Model => Model.haveLoan, "Select", new { @class = "enumLoan" })
+                        @Html.ValidationMessageFor(Model => Model.haveLoan)
+                    </td>
+                </tr>
+                <tr><td>@Html.ActionLink("Back To Details", "Index")</td><td><input type="submit" value="Update"></td></tr>
+            </table>
+        </div>
+    </body>
+}
+</html>

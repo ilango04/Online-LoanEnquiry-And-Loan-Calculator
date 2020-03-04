@@ -14,9 +14,9 @@ namespace Online_LoanEnquiry_And_Loan_Calculator
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Home",
+                name: "Customer",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Error",

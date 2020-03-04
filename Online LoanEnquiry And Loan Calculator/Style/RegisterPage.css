@@ -1,0 +1,17 @@
+﻿.enumType,.enumBank,.enumLoan,.clsName,.clsIncome,.clsMobile,.clsArea,.clsLoan,.clsPincode,.clsPan,.clsDate,.clsEmail,.clsCompany,.clsEmi,.clsTenure,.clsExperience{
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom:1px solid highlight;
+    transition: 0.2s ease;
+}
+.enumType,.enumBank,.enumLoan
+{
+    width:230px;
+}
+.clsName:active
+{     
+border:none;
+}

@@ -113,13 +113,14 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Style\MasterPage.css" />
+    <Content Include="Style\LoginPage.css" />
+    <Content Include="Style\RegisterPage.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,11 +142,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-    <Content Include="Views\Shared\Customer\Master.cshtml" />
-    <Content Include="Views\Home\Registration.cshtml" />
+    <Content Include="Views\Shared\Customer\_Master.cshtml" />
+    <Content Include="Views\Customer\Registration.cshtml" />
     <Content Include="Views\Shared\_Error.cshtml" />
-    <Content Include="Views\Home\Script.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Customer\Script.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
