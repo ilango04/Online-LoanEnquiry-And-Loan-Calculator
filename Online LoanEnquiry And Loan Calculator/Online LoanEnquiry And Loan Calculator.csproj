@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -53,6 +56,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -108,23 +112,33 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\EMICalculator.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\HomePage.css" />
     <Content Include="Style\LoginPage.css" />
+    <Content Include="Style\MasterPage.css" />
     <Content Include="Style\RegisterPage.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MapConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BankModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\LoanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,13 +156,24 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-    <Content Include="Views\Shared\Customer\_Master.cshtml" />
+    <Content Include="Views\Shared\_Master.cshtml" />
     <Content Include="Views\Customer\Registration.cshtml" />
-    <Content Include="Views\Shared\_Error.cshtml" />
     <Content Include="Views\Customer\Script.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\ToCalculate.cshtml" />
+    <Content Include="Views\Customer\CustomerView.cshtml" />
+    <Content Include="Views\Loan\AddLoan.cshtml" />
+    <Content Include="Views\Loan\EditLoan.cshtml" />
+    <Content Include="Views\Loan\DeleteLoan.cshtml" />
+    <Content Include="Views\Admin\AdminPage.cshtml" />
+    <Content Include="Views\Loan\LoanView.cshtml" />
+    <Content Include="Views\Bank\AddBank.cshtml" />
+    <Content Include="Views\Bank\EditBank.cshtml" />
+    <Content Include="Views\Bank\DeleteBank.cshtml" />
+    <Content Include="Views\Bank\BankView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,13 +183,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Error\" />
     <Folder Include="Views\Shared\Error\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Online Loan Enquiry And Loan Calculator_DAL\Online Loan Enquiry And Loan Calculator_DAL.csproj">
       <Project>{8090a6ec-19c6-4474-bb83-f9a85acb1ab2}</Project>
       <Name>Online Loan Enquiry And Loan Calculator_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Online LoanEnquiry And Loan Calculator_BL\Online LoanEnquiry And Loan Calculator_BL.csproj">
+      <Project>{cc86e41d-92a1-4de8-8480-6f2293000d3f}</Project>
+      <Name>Online LoanEnquiry And Loan Calculator_BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Online LoanEnquiry And Loan Calculator_EL\Online LoanEnquiry And Loan Calculator_EL.csproj">
       <Project>{05fc1c0f-9e9a-4439-a78a-b70a2049905f}</Project>

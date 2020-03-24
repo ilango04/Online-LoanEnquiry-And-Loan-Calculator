@@ -19,6 +19,21 @@ namespace Online_LoanEnquiry_And_Loan_Calculator
                 defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
+                name: "Admin",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Admin", action = "AdminPage", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Loan",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Loan", action = "LoanView", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Bank",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Bank", action = "BankView", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "Error",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Error", action = "Index", id = UrlParameter.Optional }

@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "AdminPage";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>AdminPage</h2>
+@Html.ActionLink("LoanPage", "LoanView", "Loan")
+@Html.ActionLink("CustomerPage", "CustomerView", "Customer")
+@Html.ActionLink("BankPage", "BankView", "Bank")

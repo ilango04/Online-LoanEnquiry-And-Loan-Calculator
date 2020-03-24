@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
 {
-    public class ErrorController : Controller
+    public class AdminController : Controller
     {
-        // GET: Error
-        public ActionResult ErrorView()
+        // GET: Admin
+        public ActionResult AdminPage()
         {
             return View();
         }

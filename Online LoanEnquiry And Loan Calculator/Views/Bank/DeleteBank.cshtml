@@ -1,0 +1,100 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.BankModel
+
+@{
+    ViewBag.Title = "DeleteBank";
+    Layout = "~/Views/Shared/Customer/_Master.cshtml";
+}
+
+<h2>DeleteBank</h2>
+
+@using (Html.BeginForm("DeleteBank", "Bank", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.bankid)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.bankid)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.name)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.interestRate)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.interestRate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.processingFees)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.processingFees)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EMI)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.EMI)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.bankTenure)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.bankTenure)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.minimumAmount)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.minimumAmount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.loanid)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.loanid)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.chanceOfLoan)
+            </td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(Model => Model.chanceOfLoan)
+            </td>
+        </tr>
+        <tr><td>@Html.ActionLink("Back to Loan Page", "LoanView")</td></tr>
+        <tr>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = Model.bankid }, new { @class = "delete-Btn" },new { Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
+        </tr>
+    </table>
+}

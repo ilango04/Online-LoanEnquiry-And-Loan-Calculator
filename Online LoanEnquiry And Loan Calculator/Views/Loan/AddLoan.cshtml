@@ -1,0 +1,25 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.LoanModel
+
+@{
+    ViewBag.Title = "AddLoan";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<center><h2>AddLoan</h2></center>
+@Html.ValidationSummary(true, "")
+@using (Html.BeginForm("AddLoan", "Loan", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table cellpadding="10" align="center">
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.name)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.name, new { @class = "clsName", @maxlength = "30" })
+                @Html.ValidationMessageFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="Add" /></td></tr>
+     </table>
+}

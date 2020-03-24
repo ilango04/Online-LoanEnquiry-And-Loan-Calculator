@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_LoanEnquiry_And_Loan_Calculator_EL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,20 +15,34 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Models
     }
     public enum Bank
     {
-        AXIS=1,
+        Cheque=1,
+        Cash,
+        AXIS,
         HDFC,
         KVB,
-        ICICI
+        ICICI,
+        LVB,
+        SBI,
+        IDFC,
+        YES,
+        KOTAK,
+        CUB,
+        TMB,
     }
-    public enum Loan
+    public enum Loans
     {
         YES=1,
         NO
     }
+    public enum Role
+    {
+        User,
+        Admin
+    }
     public class CustomerModel
     {
         [Key]
-        public int id { get; set; }
+        public int customerid { get; set; }
         [Required]
         [MaxLength(30)]
         [RegularExpression(@"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")]
@@ -71,13 +86,16 @@ namespace Online_LoanEnquiry_And_Loan_Calculator.Models
         public string company { get; set; }
         public int currentEMIAmount { get; set; }
         [Required]
-        [MaxLength(30)]
-        [RegularExpression(@"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")]
-        public string tenure { get; set; }
+        public short tenure { get; set; }
         [Required]
         public int experience { get; set; }
         [Required]
-        [EnumDataType(typeof(Loan), ErrorMessage = "Please enter the Field")]
-        public Loan haveLoan { get; set; }
+        [EnumDataType(typeof(Loans), ErrorMessage = "Please enter the Field")]
+        public Loans haveLoan { get; set; }
+        [Required]
+        [MaxLength(8)]
+        public string password { get; set; }
+        public Role role { get; set; }
+        public Loan loan { get; set; }
     }
 }

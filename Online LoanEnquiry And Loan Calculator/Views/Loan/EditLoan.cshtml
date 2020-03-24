@@ -1,0 +1,26 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.LoanModel
+
+@{
+    ViewBag.Title = "EditLoan";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<link href="~/Style/RegisterPage.css" rel="stylesheet" />
+<h2>EditLoan</h2>
+@Html.ValidationSummary(true, "")
+@using (Html.BeginForm("EditLoan", "Loan", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.loanid)
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.name)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.name, new { @class = "clsName", @type = "text", @maxlength = "30" })
+                @Html.ValidationMessageFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="Edit" /></td></tr>
+        <tr><td>@Html.ActionLink("Back to Loan Page","LoanView")</td></tr>
+    </table>
+}

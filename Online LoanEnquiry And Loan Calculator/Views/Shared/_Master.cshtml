@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Style/MasterPage.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header style="text-align:center">
+        <h1>LoanEnquiry</h1>
+    </header>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index")</li>
+        <li>@Html.ActionLink("Login", "Login")</li>
+        <li>@Html.ActionLink("Registration", "Registration")</li>
+        <li>@Html.ActionLink("LoanCalculator", "ToCalculate")</li>
+    </ul>
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("AdminPage","AdminPage", "Admin")
+
+        }
+        if (HttpContext.Current.User.IsInRole("User"))
+        {
+            @Html.ActionLink("Display", "Index", "Customer")
+        }
+        @Html.ActionLink("Logout", "LogOff", "Customer")
+    }
+    else
+    {
+        @Html.ActionLink("SignIn", "Login", "Customer")
+    }
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

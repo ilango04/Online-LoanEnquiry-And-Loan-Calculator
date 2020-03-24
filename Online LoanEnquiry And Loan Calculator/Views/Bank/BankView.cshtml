@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Online_LoanEnquiry_And_Loan_Calculator_EL.Bank>
+
+@{
+    ViewBag.Title = "BankView";
+    Layout = "~/Views/Shared/Customer/_Master.cshtml";
+}
+<h2>LoanView</h2>
+<link href="~/Style/HomePage.css" rel="stylesheet" />
+<marquee>Bank Details</marquee>
+@using (Html.BeginForm("BankView", "Bank", FormMethod.Post))
+{
+    <table>
+        <tr>@Html.ActionLink("Add Bank", "AddBank")</tr>
+        <tr>
+            <th>BankId</th>
+            <th>Bank</th>
+            <th>InterestRate</th>
+            <th>Processing Fees</th>
+            <th>EMI</th>
+            <th>BankTenure</th>
+            <th>Minimum Amount</th>
+            <th>LoanId</th>
+            <th>chanceofloan</th>
+        </tr>
+        @if (Model != null)
+        {
+            foreach (var value in Model)
+            {
+                <tr>
+                    <td>@value.bankid</td>
+                    <td>@value.name</td>
+                    <td>@value.interestRate</td>
+                    <td>@value.processingFees</td>
+                    <td>@value.EMI</td>
+                    <td>@value.bankTenure</td>
+                    <td>@value.minimumAmount</td>
+                    <td>@value.loanid</td>
+                    <td>@value.chanceOfLoan</td>
+                    <td>@Html.ActionLink("Edit", "EditLoan", new { id = value.bankid })</td>
+                    <td>@Html.ActionLink("Delete", "DeleteLoan", new { id = value.bankid })</td>
+                </tr>
+            }
+        }
+        <tr><td>@Html.ActionLink("Back to Admin Page", "AdminPage", "Admin")</td></tr>
+    </table>
+}
+

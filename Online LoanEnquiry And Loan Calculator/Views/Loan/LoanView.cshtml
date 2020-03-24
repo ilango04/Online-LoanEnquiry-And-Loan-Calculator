@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Online_LoanEnquiry_And_Loan_Calculator_EL.Loan>
+
+@{
+    ViewBag.Title = "LoanView";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>LoanView</h2>
+<link href="~/Style/HomePage.css" rel="stylesheet" />
+<marquee>Loan Details</marquee>
+@using (Html.BeginForm("LoanView", "Loan", FormMethod.Post))
+{
+<table>
+    <tr>@Html.ActionLink("Add Loan","AddLoan")</tr>
+    <tr>
+        <th>LoanId</th>
+        <th>Name</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var value in Model)
+        {
+            <tr>
+                <td>@value.loanid</td>
+                <td>@value.name</td>
+                <td>@Html.ActionLink("Edit","EditLoan",new { id=value.loanid })</td>
+                <td>@Html.ActionLink("Delete","DeleteLoan",new{id = value.loanid }, new { Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
+                </tr>
+        }
+    }
+    <tr><td>@Html.ActionLink("Back to Admin Page","AdminPage","Admin")</td></tr>
+    </table>
+    }

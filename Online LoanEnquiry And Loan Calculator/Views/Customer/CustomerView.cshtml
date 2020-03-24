@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Online_LoanEnquiry_And_Loan_Calculator_EL.Customer>
+
+@{
+    ViewBag.Title = "AdminView";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<link href="~/Style/HomePage.css" rel="stylesheet" />
+<marquee>Customer's Details</marquee>
+@using (Html.BeginForm("CustomerView", "Customer", FormMethod.Post))
+{
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>EmploymentType</th>
+        <th>Salary</th>
+        <th>MobileNo</th>
+        <th>Area</th>
+        <th>SalaryReceivedIn</th>
+        <th>DesiredLoanAmount</th>
+        <th>Gender</th>
+        <th>Pincode</th>
+        <th>PANNo</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>CurrentEMIAmount</th>
+        <th>Tenure</th>
+        <th>Experience</th>
+        <th>HaveLoan?</th>
+        <th>Password</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var value in Model)
+        {
+            if ((value.role).Equals("User"))
+            {
+                <tr>
+                    <td>@value.customerid</td>
+                    <td>@value.name</td>
+                    <td>@value.type</td>
+                    <td>@value.monthlyIncome</td>
+                    <td>@value.mobilenumber</td>
+                    <td>@value.residentArea</td>
+                    <td>@value.salaryReceivedIn</td>
+                    <td>@value.desiredLoanAmount</td>
+                    <td>@value.gender</td>
+                    <td>@value.pincode</td>
+                    <td>@value.panCardNumber</td>
+                    <td>@value.dateOfBirth</td>
+                    <td>@value.email</td>
+                    <td>@value.company</td>
+                    <td>@value.currentEMIAmount</td>
+                    <td>@value.tenure</td>
+                    <td>@value.experience</td>
+                    <td>@value.haveLoan</td>
+                    <td>@value.password</td>
+                    @*<td>@Html.ActionLink("Edit", "Edit", new { id = value.customerid })</td>*@
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = value.customerid }, new { Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
+                </tr>
+            }
+        }
+    }
+    <tr><td>@Html.ActionLink("Back To Admin Page", "AdminPage","Admin")</td></tr>
+
+</table>
+}

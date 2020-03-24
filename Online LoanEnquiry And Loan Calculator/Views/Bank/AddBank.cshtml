@@ -1,0 +1,88 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.BankModel
+
+@{
+    ViewBag.Title = "AddBank";
+    Layout = "~/Views/Shared/Customer/_Master.cshtml";
+}
+
+<center><h2>AddBank</h2></center>
+@using (Html.BeginForm("AddBank", "Bank", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.name)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.name, new { @class = "clsName", @type = "text", @maxlength = "30" })
+                @Html.ValidationMessageFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.interestRate)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.interestRate, new { @class = "clsIncome", @type = "number" })
+                @Html.ValidationMessageFor(Model => Model.interestRate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.processingFees)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.processingFees, new { @class = "clsMobile", @type = "number" })
+                @Html.ValidationMessageFor(Model => Model.processingFees)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EMI)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.EMI, new { @class = "clsArea", @maxlength = "30" })
+                @Html.ValidationMessageFor(Model => Model.EMI)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.bankTenure)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.bankTenure, new { @class = "clsArea", @maxlength = "30" })
+                @Html.ValidationMessageFor(Model => Model.bankTenure)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.minimumAmount)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.minimumAmount, new { @type = "number", @class = "clsLoan", @maxlength = "6" })
+                @Html.ValidationMessageFor(Model => Model.minimumAmount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.loanid)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.loanid, new { @type = "number", @class = "clsPincode", })
+                @Html.ValidationMessageFor(Model => Model.loanid)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.chanceOfLoan)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.chanceOfLoan, new { @class = "clsPan" })
+                @Html.ValidationMessageFor(Model => Model.chanceOfLoan)
+            </td>
+        </tr>
+        <tr><td>@Html.ActionLink("Back To Details", "Index")</td><td><input type="submit" value="Register"></td></tr>
+    </table>
+}
+

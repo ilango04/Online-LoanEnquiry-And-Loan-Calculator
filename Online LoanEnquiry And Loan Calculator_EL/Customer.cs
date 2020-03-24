@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
 namespace Online_LoanEnquiry_And_Loan_Calculator_EL
 {
     public class Customer
     {
         [Key]
-        public int id { get; set; }
+        public int customerid { get; set; }
         [Required]
         [MaxLength(30)]
         public string name { get; set; }
@@ -45,12 +44,19 @@ namespace Online_LoanEnquiry_And_Loan_Calculator_EL
         public string company { get; set; }
         public int currentEMIAmount { get; set; }
         [Required]
-        [MaxLength(30)]
-        public string tenure { get; set; }
+        public short tenure { get; set; }
         [Required]
         public int experience { get; set; }
         [Required]
         [MaxLength(3)]
         public string haveLoan { get; set; }
+        [Required]
+        [MaxLength(8)]
+        public string password { get; set; }
+        public string role { get; set; }
+        public int loanid { get; set; }
+        public Loan loan { get; set; }
+        public int bankid { get; set; }
+        public Bank Bank { get; set; }
     }
 }

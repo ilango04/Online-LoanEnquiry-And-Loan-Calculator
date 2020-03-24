@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ToCalculate";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<marquee>Loan Calculator</marquee>
+    <script src="~/Scripts/EMICalculator.js"></script>
+    <table>
+        <tr>
+            <td><label>Loan Amount</label></td>
+            <td><input type="number" id="txtAmount" /></td>
+            <td><span id="errorAmount"></span></td>
+        </tr>
+        <tr>
+            <td><label>Tenure</label></td>
+            <td><input type="number" id="txtTenure" /> </td>
+            <td><span id="errorTenure"></span></td>
+        </tr>
+        <tr>
+            <td><label>Interest Rate</label></td>
+            <td><input type="number" id="txtRate" /></td>
+            <td><span id="errorRate"></span></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Calculate EMI" onfocus="ToCalculate()" /></td>
+        </tr>
+        <tr><td><span id="txtEMI"></span></td></tr>
+    </table>
+

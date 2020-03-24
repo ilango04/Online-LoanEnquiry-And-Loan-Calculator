@@ -1,0 +1,23 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Customer", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.mobilenumber)</td>
+            <td>@Html.TextBoxFor(Model => Model.mobilenumber, new { @type = "number" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.password)</td>
+            <td>@Html.TextBoxFor(Model => Model.password, new { @type = "password" })</td>
+        </tr>
+        <tr><td><input type="submit" value="login" /></td></tr>
+    </table>
+}

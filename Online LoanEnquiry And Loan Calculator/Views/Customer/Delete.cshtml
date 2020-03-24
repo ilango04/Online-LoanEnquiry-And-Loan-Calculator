@@ -1,22 +1,20 @@
 ﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.CustomerModel
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
+    @{
+        ViewBag.Title = "DeleteCustomer";
+        Layout = "~/Views/Shared/_Master.cshtml";
+    }
     <title>Delete</title>
-</head>
-<body>
     @using (Html.BeginForm("Delete", "Customer", FormMethod.Post))
     {
+        @Html.AntiForgeryToken()
         <table>
             <tr>
                 <td>
-                    @Html.LabelFor(Model => Model.id)
+                    @Html.LabelFor(Model => Model.customerid)
                 </td>
                 <td>:</td>
                 <td>
-                    @Html.DisplayFor(Model => Model.id)
+                    @Html.DisplayFor(Model => Model.customerid)
                 </td>
             </tr>
             <tr>
@@ -174,9 +172,7 @@
             </tr>
             <tr>
                 <td>@Html.ActionLink("Back To Details", "Index")</td>
-                <td><input type="submit" value="Delete" /></td>
+                <td>@Html.ActionLink("Delete", "DeleteUser", new { id = Model.customerid },new { @class="delete-Btn"},new { Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
             </tr>
         </table>
     }
-</body>
-</html>

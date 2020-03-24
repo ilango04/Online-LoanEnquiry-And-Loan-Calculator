@@ -1,14 +1,16 @@
 ﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.CustomerModel
 <!DOCTYPE html>
-<html>
 <head>
     <title>Edit</title>
+    @{
+        ViewBag.Title = "EditCustomer";
+        Layout = "~/Views/Shared/_Master.cshtml";
+    }
 </head>
 @using (Html.BeginForm("Edit", "Customer", FormMethod.Post))
-{
-    <body>
-        @Html.HiddenFor(Model=>Model.id)
-        <div>
+     {
+      @Html.AntiForgeryToken()
+      @Html.HiddenFor(Model=>Model.customerid)
             <table>
                 <tr>
                     <td>
@@ -169,7 +171,4 @@
                 </tr>
                 <tr><td>@Html.ActionLink("Back To Details", "Index")</td><td><input type="submit" value="Update"></td></tr>
             </table>
-        </div>
-    </body>
 }
-</html>

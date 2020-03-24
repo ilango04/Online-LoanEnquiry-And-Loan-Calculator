@@ -1,10 +1,11 @@
-﻿@model IEnumerable<Online_LoanEnquiry_And_Loan_Calculator_EL.Customer>
+﻿@*@model IEnumerable<Online_LoanEnquiry_And_Loan_Calculator_EL.Customer> **@
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/Customer/_Master.cshtml";
+    Layout = "~/Views/Shared/_Master.cshtml";
 }
+@*<link href="~/Style/HomePage.css" rel="stylesheet" />
 <marquee>Customer's Details</marquee>
-<table border="1">
+<table>
     <tr>
         <th>Id</th>
         <th>Name</th>
@@ -24,6 +25,7 @@
         <th>Tenure</th>
         <th>Experience</th>
         <th>HaveLoan?</th>
+        <th>Password</th>
     </tr>
     @if (Model != null)
     {
@@ -48,11 +50,12 @@
                 <td>@value.tenure</td>
                 <td>@value.experience</td>
                 <td>@value.haveLoan</td>
+                <td>@value.password</td>
                 <td>@Html.ActionLink("Edit", "Edit",new {id=value.id})</td>
-                <td>@Html.ActionLink("Delete", "Delete",new { id=value.id})</td>
+                <td>@Html.ActionLink("Delete", "Delete",new { id = value.id },new{ Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
             </tr>
         }
     }
-</table>
+</table>*@
 
 

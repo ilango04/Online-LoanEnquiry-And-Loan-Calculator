@@ -1,0 +1,35 @@
+﻿@model Online_LoanEnquiry_And_Loan_Calculator.Models.LoanModel
+
+@{
+    ViewBag.Title = "DeleteLoan";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>DeleteLoan</h2>
+@using (Html.BeginForm("DeleteLoan", "Loan", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.loanid)
+        </td>
+        <td>:</td>
+        <td>
+            @Html.DisplayFor(Model => Model.loanid)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.name)
+        </td>
+        <td>:</td>
+        <td>
+            @Html.DisplayFor(Model => Model.name)
+        </td>
+    </tr>
+    <tr>
+    <tr><td>@Html.ActionLink("Back to Loan Page", "LoanView")</td>
+    <td>@Html.ActionLink("Delete", "Delete", new { id = Model.loanid}, new { @class = "delete-Btn" },new { Onclick = "return confirm('Are you sure want to permanently delete?')" })</td>
+</tr></table>
+}
