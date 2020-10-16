@@ -11,30 +11,28 @@
     </header>
     <ul>
         <li>@Html.ActionLink("Home", "Index")</li>
-        <li>@Html.ActionLink("Login", "Login")</li>
         <li>@Html.ActionLink("Registration", "Registration")</li>
+        <li>
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                if (HttpContext.Current.User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("AdminPage", "AdminPage", "Admin")
+
+                }
+                if (HttpContext.Current.User.IsInRole("User"))
+                {
+                    @Html.ActionLink("Display", "Index", "Customer")
+                }
+                @Html.ActionLink("Logout", "LogOff", "Customer")
+            }
+            else
+            {
+                @Html.ActionLink("Login", "Login", "Customer")
+            }
+        </li>
         <li>@Html.ActionLink("LoanCalculator", "ToCalculate")</li>
     </ul>
-    @if (HttpContext.Current.User.Identity.IsAuthenticated)
-    {
-        if (HttpContext.Current.User.IsInRole("Admin"))
-        {
-            @Html.ActionLink("AdminPage","AdminPage", "Admin")
-
-        }
-        if (HttpContext.Current.User.IsInRole("User"))
-        {
-            @Html.ActionLink("Display", "Index", "Customer")
-        }
-        @Html.ActionLink("Logout", "LogOff", "Customer")
-    }
-    else
-    {
-        @Html.ActionLink("SignIn", "Login", "Customer")
-    }
-
-    <div>
         @RenderBody()
-    </div>
 </body>
 </html>

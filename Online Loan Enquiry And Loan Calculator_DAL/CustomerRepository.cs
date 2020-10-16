@@ -37,9 +37,9 @@ namespace Online_LoanEnquiry_And_Loan_Calculator_DAL
                 SqlParameter tenure = new SqlParameter("@tenure", customer.tenure);
                 SqlParameter experience = new SqlParameter("@experience", customer.experience);
                 SqlParameter haveLoan = new SqlParameter("@haveLoan", customer.haveLoan);
-                SqlParameter role = new SqlParameter("@role", customer.role);
                 SqlParameter password = new SqlParameter("@password", customer.password);
-                var data = context.Database.ExecuteSqlCommand("Customer_Insert @name,@type,@monthlyIncome,@mobilenumber,@residentArea,@salaryReceivedIn,@desiredLoanAmount,@gender,@pincode,@panCardNumber,@dateOfBirth,@email,@company,@currentEMIAmount,@tenure,@experience,@haveLoan,@role,@password",name,type,monthlyIncome,mobilenumber,residentArea,salaryReceivedIn,desiredLoanAmount,gender,pincode,panCardNumber,dateOfBirth,email,company,currentEMIAmount,tenure,experience,haveLoan,role,password);
+                SqlParameter role = new SqlParameter("@role", customer.role);
+                var data = context.Database.ExecuteSqlCommand("Customer_Insert @name,@type,@monthlyIncome,@mobilenumber,@residentArea,@salaryReceivedIn,@desiredLoanAmount,@gender,@pincode,@panCardNumber,@dateOfBirth,@email,@company,@currentEMIAmount,@tenure,@experience,@haveLoan,@password,@role", name,type,monthlyIncome,mobilenumber,residentArea,salaryReceivedIn,desiredLoanAmount,gender,pincode,panCardNumber,dateOfBirth,email,company,currentEMIAmount,tenure,experience,haveLoan, password,role);
                 //context.SaveChanges();
             }
         }

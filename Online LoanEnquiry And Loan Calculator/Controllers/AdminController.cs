@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Online_LoanEnquiry_And_Loan_Calculator.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin

@@ -58,5 +58,6 @@ namespace Online_LoanEnquiry_And_Loan_Calculator_EL
         public Loan loan { get; set; }
         public int bankid { get; set; }
         public Bank Bank { get; set; }
+
     }
 }
